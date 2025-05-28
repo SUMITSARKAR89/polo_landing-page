@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stack Reveal on Scroll</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
+
+    .stack-container {
+      position: relative;
+      height: 400vh; /* Enough to scroll through all cards */
+    }
+
+    .cards {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      position: absolute;
+      width: 400px;
+      height: 250px;
+      border-radius: 12px;
+      padding: 20px;
+      background: #333;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: scale(0.9);
+      opacity: 0;
+      transition: all 0.6s ease;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card.visible {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 10;
+    }
+
+    .card:nth-child(1) { background: #444; }
+    .card:nth-child(2) { background: #555; }
+    .card:nth-child(3) { background: #666; }
+    .card:nth-child(4) { background: #777; }
+  </style>
+</head>
+<body>
+
+<div class="spacer"></div>
+
+<div class="stack-container">
+  <div class="cards">
+    <div class="card" id="card1">
+      <h2>Skilled Professional</h2>
+      <p>Top-tier talent with years of experience.</p>
+    </div>
+    <div class="card" id="card2">
+      <h2>Amateur Designer</h2>
+      <p>Inconsistencies from lack of experience.</p>
+    </div>
+    <div class="card" id="card3">
+      <h2>Dedicated Partner</h2>
+      <p>Focused on your long-term success.</p>
+    </div>
+    <div class="card" id="card4">
+      <h2>Creative Thinker</h2>
+      <p>Unique and innovative design solutions.</p>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const totalCards = cards.length;
+
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY;
+    const triggerPoint = window.innerHeight / 2;
+
+    cards.forEach((card, index) => {
+      const revealPoint = window.innerHeight * (index + 1);
+      if (scrollPos > revealPoint - triggerPoint) {
+        card.classList.add('visible');
+      } else {
+        card.classList.remove('visible');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stack Scroll Reveal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
+
+    .stack-container {
+      position: relative;
+      height: 400vh; /* enough for all cards */
+    }
+
+    .cards {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      position: absolute;
+      width: 400px;
+      height: 250px;
+      background: #333;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .card:nth-child(1) { background: #444; z-index: 4; }
+    .card:nth-child(2) { background: #555; z-index: 3; }
+    .card:nth-child(3) { background: #666; z-index: 2; }
+    .card:nth-child(4) { background: #777; z-index: 1; }
+  </style>
+</head>
+<body>
+
+<div class="spacer"></div>
+
+<div class="stack-container">
+  <div class="cards">
+    <div class="card"><h2>Skilled Professional</h2><p>High-end, reliable design.</p></div>
+    <div class="card"><h2>Amateur Designer</h2><p>Inconsistent and untested ideas.</p></div>
+    <div class="card"><h2>Dedicated Partner</h2><p>Helping you grow long-term.</p></div>
+    <div class="card"><h2>Creative Thinker</h2><p>Fresh, original concepts.</p></div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<script>
+  const cards = document.querySelectorAll(".card");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const vh = window.innerHeight;
+
+    cards.forEach((card, index) => {
+      const triggerStart = vh * (index + 0.5);
+      const triggerEnd = vh * (index + 1.2);
+      if (scrollY >= triggerStart && scrollY < triggerEnd) {
+        card.classList.add("visible");
+      } else {
+        card.classList.remove("visible");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
