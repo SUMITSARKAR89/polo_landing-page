@@ -23,3 +23,13 @@ projectCard.forEach(card => {
       icon.style.top = `${y}px`;
     });
   });
+
+
+
+    const sliderTwo = document.querySelector('.slider-two');
+
+ sliderTwo.addEventListener('wheel', (index) => {
+     index.preventDefault();
+     sliderTwo.scrollLeft += index.deltaY;
+     sliderTwo.style.scrollBehaviour = "auto";
+ });
