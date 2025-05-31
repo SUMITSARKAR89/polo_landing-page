@@ -73,7 +73,7 @@
             </nav>
         </div>
 
-         <div class="hero">
+        <div class="hero">
             <video src="ImageFile/herovideo.mp4" class="ten-slider" autoplay loop muted ></video>
             <div class="hero-content">
                 <div class="hero-container">
@@ -555,6 +555,100 @@
             </div>
 
         </section>
+
+        <section id="recent">
+            <div class="recent-content">
+                <div class="recent-info">
+                    <span class="dot-txt"><i class="fa-regular fa-circle-dot"></i> Recent Projects</span>
+                    <h2>Recent <span>Design</span> <a href="project.html"><i class="fa-solid fa-arrow-right h1-icon"></i></a> <p>{see all}</p></h2>
+                    <p class="hero-decs">Showcase of some of my recent sleek websites</p>
+                       
+                </div>
+                <div class="hero-btns">
+                    <a href="project.html" class="project-btn btn">see all projects</a>
+                    <a href="contact.html" class="contact-btn btn">contact now</a>
+                </div>
+            </div>
+
+            <div class="recent-product-container">
+                <div class="recent-container">
+                    <div class="project-card">
+                    <img src="https://framerusercontent.com/images/MOWvK2SZ1VX1XxKpWbMsodpDQjA.png" alt="Card-1">
+                    <div class="project-icon">
+                        <p>view project</p>
+                    </div>
+                    <i class="ri-arrow-right-up-line"></i>
+                    </div>
+
+                    <div class="project-card">
+                    <img src="https://framerusercontent.com/images/lI8guMdEAZPO393np5alz6vOES8.png?scale-down-to=2048" alt="Card-2">
+                    <div class="project-icon">
+                        <p>view project</p>
+                    </div>
+                    <i class="ri-arrow-right-up-line"></i>
+                    </div>
+                </div>
+
+                <div class="recent-container">
+                    <div class="project-card">
+                    <img src="https://framerusercontent.com/images/UEBCw4blSsdPGjv05eqabw2hpw.png" alt="Card-3">
+                    <div class="project-icon">
+                        <p>view project</p>
+                    </div>
+                    <i class="ri-arrow-right-up-line"></i>
+                
+                    </div>
+
+                    <div class="project-card">
+                    <img src="https://framerusercontent.com/images/IgQlEJAv5wk5JwCItJr3Hs0HKNc.png?scale-down-to=2048" alt="Card-4">
+                    <div class="project-icon">
+                        <p>view project</p>
+                    </div>
+                    <i class="ri-arrow-right-up-line"></i>
+                    </div>
+                </div>
+            </div>
+                    
+            
+        </section>
+
+        <section id="choose">
+            <div class="about-us">
+              <span class="dot-txt"><i class="fa-regular fa-circle-dot"></i> Why choose me</span>
+              <h2>Why me as <span>Design Partner</span></h2>
+              <p>Why Partner with Me for the Design Excellence</p>
+            </div>
+
+            <div class="choose-content">
+                <div class="spacer"></div>
+
+<div class="stack-container">
+  <div class="cards">
+    <div class="card" id="card1">
+      <h2>Skilled Professional</h2>
+      <p>Top-tier talent with years of experience.</p>
+    </div>
+    <div class="card" id="card2">
+      <h2>Amateur Designer</h2>
+      <p>Inconsistencies from lack of experience.</p>
+    </div>
+    <div class="card" id="card3">
+      <h2>Dedicated Partner</h2>
+      <p>Focused on your long-term success.</p>
+    </div>
+    <div class="card" id="card4">
+      <h2>Creative Thinker</h2>
+      <p>Unique and innovative design solutions.</p>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+        
+
+                
+            </div>
+        </section>
         
        
 
@@ -569,6 +663,24 @@
     </footer>
 
     <script src="asset/JsFile/app.js"></script>
+    <script>
+        const cards = document.querySelectorAll('.card');
+  const totalCards = cards.length;
+
+  window.addEventListener('scroll', () => {
+    const scroll = window.scrollY;
+    const triggerPoint = window.innerHeight / 2;
+
+    cards.forEach((card, index) => {
+      const revealPoint = window.innerHeight * (index + 1);
+      if (scroll > revealPoint - triggerPoint) {
+        card.classList.add('visible');
+      } else {
+        card.classList.remove('visible');
+      }
+    });
+  });
+    </script>
                     
 
 

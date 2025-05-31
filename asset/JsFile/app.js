@@ -33,3 +33,7 @@ projectCard.forEach(card => {
      sliderTwo.scrollLeft += index.deltaY;
      sliderTwo.style.scrollBehaviour = "auto";
  });
+
+
+
+  
