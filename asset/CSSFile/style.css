@@ -261,7 +261,7 @@
         max-width: 100%;
         position: relative;
     }
-    header #head{
+     #head{
         background: #161616b4;
         backdrop-filter: blur(10px);
         position: fixed;
@@ -274,9 +274,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 6px 20px;
+        padding: 10px 20px;
         border: 1px solid #ffffff15;
-        z-index: 9999;
+        z-index: 999;
     }
     #logo{
         max-width: 100%;
@@ -291,6 +291,25 @@
     #logo a img:hover{
         width: 82px;
     }
+
+    @media(max-width:1280px){
+        nav{
+            display: none;
+            
+        }
+        nav .navLink,
+        .navLink.navBtn{
+            display: none;
+        }
+       
+        
+        
+    }
+
+  
+   
+    
+   
     nav{
         max-width: 100%;
         display: flex;
@@ -298,6 +317,7 @@
         align-items: center;
        width: 100%;
        gap: 10px;
+       transition: var(--transition-2);
     }
     nav .navLink{
         max-width: 100%;
@@ -318,7 +338,7 @@
         justify-content: center;
         align-items: center;
         gap: 5px;
-        padding: 8px 40px;
+        padding: 3px 40px;
         max-width: 100%;
         background: var(--gradient-3);
         border-radius: 35px;
@@ -636,7 +656,7 @@
     top: 68% ;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 999;
+    z-index: 100;
     width: 90%;
     min-height: 100vh;
     max-width: 100%;
