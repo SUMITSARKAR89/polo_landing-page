@@ -164,6 +164,7 @@
          font-family: "Inter", sans-serif;
          color: var(---txt-white);
          background: var(--primary-color);
+        
          font-size: var(--font-16);
         
       
@@ -256,102 +257,140 @@
     /* ======================================================================
     ==============================header start here========================
     ====================================================================== */
+   /* ------------------- */
 
-    header{
-        max-width: 100%;
-        position: relative;
-    }
-     #head{
-        background: #161616b4;
-        backdrop-filter: blur(10px);
-        position: fixed;
-        width: 55%;
-        max-width: 100%;
-        top: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        border: 1px solid #ffffff15;
-        z-index: 999;
-    }
-    #logo{
-        max-width: 100%;
-        width: 100%;
-        padding: 2px;
-        transition: var(--transition-1);
-    }
-    #logo a img{
-        width: 85px;
-        transition: var(--transition-1);
-    }
-    #logo a img:hover{
-        width: 82px;
-    }
-
-    @media(max-width:1280px){
-        nav{
-            display: none;
-            
-        }
-        nav .navLink,
-        .navLink.navBtn{
-            display: none;
-        }
-       
-        
-        
-    }
 
   
-   
+    .nav-container{
+        position: relative;
+       
+     }
     
-   
-    nav{
+     .menu .current{
+        max-width: 100%;
+        width: 90px;
+        padding: 0 5px;
+     }
+    
+     nav{
+        
+        position: fixed;
+        max-width: 100%;
+        margin: 0 auto;
+        z-index: 9999;
+        left: 50%;
+       
+        top: 30px;
+        transform: translateX(-50%);
+        display: block;
+
+     }
+     .nav-inner .menu:hover{
+        border-bottom: 1px solid #ffffff2d;
+
+     }
+     .nav-inner{
+        position: relative;
         max-width: 100%;
         display: flex;
-        justify-content: flex-end;
         align-items: center;
-       width: 100%;
-       gap: 10px;
-       transition: var(--transition-2);
-    }
-    nav .navLink{
+        justify-content: center;
+        
+     }
+     .nav-inner .menu{
+        display: flex;
         max-width: 100%;
-        margin: 0 5px;
-        padding: 0 5px;
+        justify-content: space-between;
+        align-items: center;
+       
+       
+        backdrop-filter: blur(5px);
+        border-bottom: 1px solid #000000;
+        
+        padding: 5px 15px;
+        border-radius: 50px;
+        position: relative;
+        background:#141414e3;
+        transition: 0.3s;
+        width: 100%;
+        height: 57px;
+        
+
+     }
+     .menu .menuList{
+        max-width: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        padding: 1px;
+        margin-left: 40px;
+      
+       
+     }
+     .menuList .menu-item{
+        max-width: 100%;
+
+     }
+     .menu-item a{
         color: var(---txt-white-grey);
         font-size: var(--font-16);
-        text-transform: capitalize;
+        margin: 0 5px;
+        padding: 2px;
+        text-align: center;
         transition: var(--transition-1);
-        font-weight: 500;
-        
-    }
-    nav .navLink:hover{
+      
+     }
+     .menu-item a:hover{
         color: var(---txt-white);
-    }
-    nav .navBtn{
+     }
+     .menu-item.navBtn{
         display: flex;
+
         justify-content: center;
         align-items: center;
         gap: 5px;
-        padding: 3px 40px;
+        padding: 9px 25px 9px 5px;
         max-width: 100%;
         background: var(--gradient-3);
         border-radius: 35px;
         border: 1px solid #ffffff15;
         transition: var(--transition-1);
+        text-align: left;
     }
-    nav .navBtn:hover{
+    .navBtn a{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        
+    }
+    .menu-item.navBtn:hover{
         background: var(---txt-blk);
-        border: 1px solid #ffffff44;
+        border: 1px solid #ffffff4b;
     }
-    nav .navBtn i{
-        font-size: var(--font-h4);
+    .navBtn a i{
+        margin-right: 5px;
+        font-size: var(--font-22);
     }
+     
+     
+    
+    
+    
+   
+    
+   /* ------------------------ */
+
+   
+
+    header{
+        max-width: 100%;
+        position: relative;
+    }
+
+   
 
     .hero{
          max-width: 100%;
@@ -363,16 +402,19 @@
          overflow: hidden;
         position: sticky;
         z-index: 1;
+      
     }
     .hero .ten-slider{
-        position: sticky;
+        position: absolute;
         top: 0%;
-        margin-top: 13%;
+        
         left: 0%; 
         width:100%;
         max-width: 100%;
-        height: 120%;
+        height: 100%;
         object-fit: cover;
+       
+
          
        
 }
@@ -382,9 +424,9 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
+    bottom: 0;
     left: 0;
-     /* For browsers that do not support gradients */
+    
     background: linear-gradient(to bottom , rgba(7, 7, 7, 0.836), #0A0A0A);
     backdrop-filter: blur(2px);
 }
@@ -406,7 +448,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 20px 6%;
+    padding: 20px 1%;
     gap: 80px;
    
 }
@@ -423,6 +465,8 @@
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
+    z-index: 2;
+   
 }
  .dot-txt{
     font-size: var(--font-15);
@@ -456,10 +500,14 @@
     color: var(---txt-white);
     position: relative;
     margin-bottom: 15px;
+    cursor: none;
 }
 .hero-card-left h1 span,
 .recent-info h2 span{
     color: var(---txt-white-grey);
+}
+.hero-card-left h1 .h1-icon a{
+    max-width: 100%;
 }
 .hero-card-left h1 .h1-icon,
 .recent-info h2 .h1-icon{
@@ -2306,7 +2354,7 @@ footer .foot{
     left: 60px;
     width: 150px;
     transform: rotate(-15deg);
-    font-size: 13px;
+    font-size: 10px;
     color: var(---txt-white-grey);
     opacity: 0;
     display: none;
@@ -2319,3 +2367,119 @@ footer .foot{
     transition: var(--transition-1);
  }
  
+
+/* 
+ <!-- ======================================================================
+    ==============================contact HTML  start here========================
+    ====================================================================== --> */
+
+#contact{
+    max-width: 100%;
+    position: relative;
+}
+.contact-container{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 2%;
+    width: 100%;
+}
+.contact-container .recent-info{
+   
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    text-align: left;
+}
+.contact-info .book,
+.service-info .book{
+    max-width: 100%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    background: var(--btn-bg-color);
+    width: 100%;
+    padding: 5% 7%;
+     border-radius: 10px;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.book h5{
+    color: var(---txt-white);
+}
+.contact-info .test-card{
+    margin: 5% 0;
+    background: var(--btn-bg-color);
+    padding: 5%;
+    border-radius: 15px
+}
+.test-card-desc .test-p{
+    text-align: left;
+}
+.contact-container .contact-form{
+    width: 80%;
+    max-width: 100%;
+   
+}
+
+#formContainer {
+      background-color: var(--btn-bg-color);
+      padding:10% 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(7, 7, 7, 0.979);
+      width: 100%;
+      color: var(---txt-white);
+      opacity: 0.8;
+    }
+    #formContainer label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: var(--font-16);
+    }
+    #formContainer input,
+    #formContainer select,
+    #formContainer textarea {
+      width: 100%;
+      padding:15px 10px;
+      margin-bottom: 15px;
+      background-color: var(--secondary-color);
+      color: var(---txt-white);
+      border: none;
+      opacity: 0.9;
+      border-radius: 6px;
+    }
+    
+    #formContainer textarea{
+        resize: none;
+    }
+    #formContainer select {
+      appearance: none;
+    }
+    #formContainer button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #aaa, #fff);
+      border: none;
+      border-radius: 30px;
+      color: black;
+     font-size: var(--font-20);
+     font-weight: 500;
+
+      cursor: pointer;
+      margin-top: 5%;
+    }
+
+    #formContainer p{
+     color: var(---txt-white-grey);
+     text-align: center;
+     margin-top: 20px;
+     font-size: var(--font-15);
+     font-weight: 500;
+
+    }

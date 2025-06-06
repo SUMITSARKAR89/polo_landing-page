@@ -1,92 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Stack Scroll Reveal</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #111;
-      color: #fff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Polo is a sleek and professionally designed portfolio template for Framer, built to help creatives and professionals showcase their work effortlessly. With its modern aesthetics and seamless functionality.">
+    <meta name="title" content="Polo – Framer Portfolio Template">
+    <meta property="og:description" content="Polo is a sleek and professionally designed portfolio template for Framer, built to help creatives and professionals showcase their work effortlessly. With its modern aesthetics and seamless functionality.">
+    <meta property="og:type" content="website ">
+    <meta property="og:title" content="Polo – Framer Portfolio Template">
+    <meta name="keywords" content="I'm Johan Beker, a dedicated Web Designer & Developer based in the vibrant city of Berlin, Germany. I specialize in creative design with seamless technical execution to craft exceptional digital experiences. ">
+    <meta name="twitter:description" content="Polo is a sleek and professionally designed portfolio template for Framer, built to help creatives and professionals showcase their work effortlessly. With its modern aesthetics and seamless functionality.">
+    <meta name="author" content="sumit sarkar">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Polo – Framer Portfolio Template">
 
-    .spacer {
-      height: 100vh;
-    }
+    <!-- font awesome cdn   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
-    .stack-container {
-      position: relative;
-      height: 400vh; /* enough for all cards */
-    }
+    <!-- favicon section   --------------------------------->
+    <link rel="shortcut icon" href="https://framerusercontent.com/images/khtpGAqK0yJUzdYAleI1p4UOPM.png">
 
-    .cards {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    <!-- this is Css section   --------------------------------->
+     <link rel="stylesheet" href="asset/CSSFile/style.css">
+     <link rel="stylesheet" href="asset/CSSFile/responsive.css">
+   
 
-    .card {
-      position: absolute;
-      width: 400px;
-      height: 250px;
-      background: #333;
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      opacity: 0;
-      transform: scale(0.9);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
+    <!-- this is google font section   --------------------------------->
 
-    .card.visible {
-      opacity: 1;
-      transform: scale(1);
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+   
+    <!-- remix icon link   --------------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js" integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    .card:nth-child(1) { background: #444; z-index: 4; }
-    .card:nth-child(2) { background: #555; z-index: 3; }
-    .card:nth-child(3) { background: #666; z-index: 2; }
-    .card:nth-child(4) { background: #777; z-index: 1; }
-  </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ---swiper js ---------------------------------->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+
+    <!-- ---scroll reveal js ---------------------------------->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Polo – Framer Portfolio Template</title>
+   
 </head>
 <body>
 
-<div class="spacer"></div>
+    <!-- ===========cursor start========= -->
+    <div class="custom-cursor" id="cursor"></div>
 
-<div class="stack-container">
-  <div class="cards">
-    <div class="card"><h2>Skilled Professional</h2><p>High-end, reliable design.</p></div>
-    <div class="card"><h2>Amateur Designer</h2><p>Inconsistent and untested ideas.</p></div>
-    <div class="card"><h2>Dedicated Partner</h2><p>Helping you grow long-term.</p></div>
-    <div class="card"><h2>Creative Thinker</h2><p>Fresh, original concepts.</p></div>
-  </div>
-</div>
+    <div class="bar"></div>
+    
 
-<div class="spacer"></div>
+   <div class="nav-container">
+        <nav>
+            <div class="nav-inner">   
+                <div class="menu">
+                    <a href="index.html" class="current"><img src="https://framerusercontent.com/images/duRtoIIUg5pJHSrEAoXb5RLVCc.svg" alt="" ></a>
+                    <div class="menuList">
+                        <li class="menu-item"><a href="#service" >services</a></li>
+                        <li class="menu-item"><a href="project.html" >projects</a></li>
+                        <li class="menu-item"><a href="#testimonial" >testimonials</li>
+                        <li class="menu-item navBtn"><a href="contact.html" ><i class="ri-sparkling-line"></i>contact</li>  
+                    </div>
+                </div>
+            </div>
+        </nav>
+       
+    </div>
+   
+     <!-- ======================================================================
+    ==============================main start here========================
+    ====================================================================== -->
 
-<script>
-  const cards = document.querySelectorAll(".card");
+    <main style="margin: 10% 0;">
 
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    const vh = window.innerHeight;
+    <section id="contact">
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="recent-info " style="cursor: none;">
+                    <span class="dot-txt"><i class="fa-regular fa-circle-dot"></i>Lets connect</span>
+                    <h2 ><span style="color: #fff; ">Let’s Collaborate </span><span>and Begin the work</span></h2>
+                       
+          </div>
+          <div class="testimonial-count" style="cursor: none;">
+                        <div class="count-card">
+                            <h3 style="color: #fff;">100+</h3>
+                            <p>happy clients</p>
+                        </div>
+                        <div class="count-card">
+                            <h3 style="color: #fff;">$250M+</h3>
+                            <p>revenue added</p>
+                        </div>
+                        <div class="count-card">
+                            <h3 style="color: #fff;">4.8</h3>
+                            <p>Average Rating</p>
+                        </div>
+          </div>
+          <div class="choose-card test-card">
+              <div class="test-card-head">
+                  <img src="https://framerusercontent.com/images/bcAzOFG614oJvNiV0vto1KQKGWs.png" alt="">
+                  <div class="test-card-title">
+                      <h5>Ryan harper</h5>
+                      <p class="test-title">Ryan Toys</p>
+                  </div>
+              </div>
+              <div class="test-card-desc">
+                  <div class="stars">
+                                <span>5.0</span>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                  </div>
+                  <p class="test-p">Using this analytics tool has been a game-changer for our team. The seamless interface and actionable insights make every decision smarter.</p>
+              </div> 
+          </div>
+          <div class="book">
+                <h5>prefer to book a call?</h5>
+                 <a href="" target="_blank" class="project-btn btn">Lets book a call</a>
+          </div>
+        </div>
+        <div class="contact-form">
+           <form action="#" id="formContainer">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your Name" required />
 
-    cards.forEach((card, index) => {
-      const triggerStart = vh * (index + 0.5);
-      const triggerEnd = vh * (index + 1.2);
-      if (scrollY >= triggerStart && scrollY < triggerEnd) {
-        card.classList.add("visible");
-      } else {
-        card.classList.remove("visible");
-      }
-    });
-  });
-</script>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your Email" required />
 
+            <label for="website">Website (optional)</label>
+            <input type="url" id="website" placeholder="Company Website" />
+
+            <label for="budget">Budget</label>
+            <select id="budget" required>
+      <option value="">Select Budget...</option>
+      <option value="2000">less than $2000</option>
+      <option value="2000-5000">$2,000 - $5,000</option>
+      <option value="5000-10000">$5,000 - $10,000</option>
+      <option value="10000-15000">$10,000 - $15,000</option>
+      <option value=">15000">$15,000+</option>
+            </select>
+
+            <textarea rows="10" placeholder="Message..."></textarea>
+            <button type="submit">Send Message</button>
+     
+            <p>(We will reach out to you within 48hrs )</p>
+
+           </form>
+        </div>
+      </div>
+
+    </section>
+        
+
+    <section id="faq">
+      <div class="faq-container">
+                <div class="service-info">
+                    <div class="about-us">
+                        <span class="dot-txt"><i class="fa-regular fa-circle-dot"></i> FAQ Section</span>
+                        <h2><span style="color: #fff;">Questions,</span><span>Answers</span></h2>
+                        <p>Get quick answers to your most pressing Questions</p>
+                    </div>
+
+                    <div class="choose-card test-card">
+                        <div class="test-card-head">
+                            <img src="https://framerusercontent.com/images/DeANEXSHfUPawiwrcmj8Tkiib1o.jpg?scale-down-to=512" alt="">
+                            <div class="test-card-title">
+                                <h5>Ryan harper</h5>
+                                <p class="test-title">Harper education</p>
+                            </div>
+                        </div>
+                        <div class="test-card-desc">
+                            <div class="stars">
+                                <span>5.0</span>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p class="test-p">Exceptional creativity and attention to detail! The final product not only looks great but also enhances user engagement</p>
+                        </div> 
+                    </div>
+                    <div class="book">
+                      <h5>prefer to book a call?</h5>
+                        <a href="" target="_blank" class="project-btn btn">Lets book a call</a>
+                    </div>
+
+                                
+                </div>
+                <div class="faq-content">
+                    <div class="acc-container">
+                        <div class="acc-content">
+                            <div class="title">
+                                
+                                <h5>What services do you offer?</h5>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div class="acc-answere">
+                                <p>I specialize in web design, branding, UI/UX, and Framer development, creating modern, user-friendly experiences tailored to your needs</p>
+
+                            </div>
+
+                        </div>
+                        <div class="acc-content">
+                            <div class="title">
+                                
+                                <h5>How do I start working with you?</h5>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div class="acc-answere">
+                                <p>Simply reach out through my contact page, and we’ll discuss your project, goals, and timeline before getting started</p>
+
+                            </div>
+
+                        </div>
+                        <div class="acc-content">
+                            <div class="title">
+                                
+                                <h5>What design tools do you use?</h5>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div class="acc-answere">
+                                <p>I primarily use Framer, Figma, Adobe Suite, and Webflow to craft high-quality designs and functional prototypes</p>
+
+                            </div>
+
+                        </div>
+                        <div class="acc-content">
+                            <div class="title">
+                                
+                                <h5>How long does a project take?</h5>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div class="acc-answere">
+                                <p>Timelines vary based on project complexity, but most designs take 1–3 weeks, while full websites take 3–6 weeks</p>
+
+                            </div>
+
+                        </div>
+                        <div class="acc-content">
+                            <div class="title">
+                                
+                                <h5>What industries do you work with?</h5>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div class="acc-answere">
+                                <p>I’ve designed for tech startups, agencies, e-commerce, personal brands, and more—but I’m open to working with any industry</p>
+
+                            </div>
+
+                        </div>
+                        <div class="acc-content">
+                            <div class="title">
+                                
+                                <h5>What is your pricing structure?</h5>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div class="acc-answere">
+                                <p>Pricing depends on the project scope. Contact me for a custom quote based on your needs and budget</p>
+
+                            </div>
+
+                        </div>
+
+                       
+                    </div>
+                </div>
+      </div>
+
+    </section>
+
+    <section id="grow">
+            <div class="grow-container">
+                <div class="service-info">
+                    <div class="about-us">
+                        <span class="dot-txt"><i class="fa-regular fa-circle-dot"></i> Lest's connect</span>
+                        <h2>Let's Grow <span> Together</span></h2>
+                       
+                    </div>
+                    <div class="grow-card">
+                        <div class="grow-title">
+                            <h5>Web Design</h5>
+                            <span>starting from $800</span>
+                        </div>
+                        <p>Showcasing sleek, high-performance designs tailored for impact</p>
+                    </div>
+                    <div class="grow-card">
+                        <div class="grow-title">
+                            <h5>Ui/UX design</h5>
+                            <span>starting from $1,800</span>
+                        </div>
+                        <p>Building visually stunning, user-focused websites that elevate brands.</p>
+                    </div>
+
+                    <div class="hero-btns">
+                        <a href="project.html" class="project-btn btn">see all projects</a>
+                        <a href="contact.html" class="contact-btn btn">contact now</a>
+                    </div>          
+                </div>
+
+                <div class="grow-img">
+                    <div class="grow-img-card">
+                        <img src="https://framerusercontent.com/images/IwwlXF60xjgLFBH3Sj6kzl9eXs.png?scale-down-to=2048" alt="">
+                    </div>
+                </div>
+
+            </div>
+    </section>
+        
+       
+
+    </main>
+
+     <!-- ======================================================================
+    ==============================footer start here========================
+    ====================================================================== -->
+
+    <footer>
+       <div class="foot">
+        <div class="footer-container">
+            <div class="footer-card">
+                <div class="logo">
+                    <a href="index.html"><img src="https://framerusercontent.com/images/duRtoIIUg5pJHSrEAoXb5RLVCc.svg" alt="" width="100px"></a>
+                </div>
+                <div class="footer-link">
+                    <a href="#service">services</a>
+                    <a href="project.html">project</a>
+                    <a href="#about">about</a>
+                    <a href="#testimonial">testimonial</a>
+                    <a href="contact.html">contact</a>
+                </div>
+            </div>
+            <div class="footer-card">
+                <div class="footer-social-link">
+                    <a href="https://www.twitter.com"><i class="ri-twitter-x-line"></i></a>
+                    <a href="https://www.instagram.com"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.dribbble.com"><i class="ri-dribbble-line"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="ri-facebook-circle-line"></i></a>
+
+                </div>
+            </div>
+            <div class="footer-text">
+                <p>© 2025 Polo </p>
+                <span>{all right reserve}</span>
+            </div>
+        </div>
+       </div>
+
+    </footer>
+   
+  
+
+
+    <script src="asset/JsFile/app.js"></script>
+    
+    
+                    
+
+
+    
 </body>
 </html>
