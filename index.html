@@ -111,7 +111,7 @@
             </div>
             
         </div>
-         <div class="project">
+        <div class="project">
             <div class="project-container">
                 <div class="project-card">
                     <img src="ImageFile/project (1).png" alt="Card-1">
@@ -1010,6 +1010,26 @@
 
 
     <script src="asset/JsFile/app.js"></script>
+    <script>
+        ScrollReveal({ 
+        //   reset: true,
+        distance: "60px",
+        duration: 2500,
+        delay:400 
+        });
+        ScrollReveal().reveal('.hero-card-one,  .service-logo-slider, .choose-container, .acc-container', { delay: 200, origin: 'bottom' });
+        ScrollReveal().reveal('.about-container .about-img-card, .process-slide-card, .recent-container, .faq-container .service-info', { delay: 100, origin: 'left' });
+        ScrollReveal().reveal('.about-container .about-content-card, .slider-two .slider-container, .grow-container .grow-img', { delay: 100, origin: 'right' });
+        ScrollReveal().reveal('nav, .hero-card-two, .about-us h2, .about-content-card .about-pera,  .service-container .service-container-card', { delay: 200, origin: 'top' });
+        
+        ScrollReveal().reveal('.project-container .project-card, .about-us p, .hero-btns, .footer-link a', { delay: 200, origin: 'bottom', interval: 200});
+        ScrollReveal().reveal('.hero-container .hero-card-left, h1, .testimonial-container .testimonial-left', { delay: 200, origin: 'left', interval: 200});
+        ScrollReveal().reveal('.hero-decs', { delay: 400, origin: 'left', interval: 200});
+        ScrollReveal().reveal('.hero-container .hero-card-right', { delay: 200, origin: 'right', interval: 200});
+        ScrollReveal().reveal('.about-experience .exprience', { delay: 400, origin: 'right', interval: 300});
+        ScrollReveal().reveal('.dot-txt, .about-img-content', { delay: 300, origin: 'top', interval: 200});
+
+    </script>
     
     
                     

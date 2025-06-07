@@ -2386,6 +2386,10 @@ footer .foot{
     padding: 2%;
     width: 100%;
 }
+.contact-container .contact-info{
+    max-width: 100%;
+    width: ;
+}
 .contact-container .recent-info{
    
     max-width: 100%;
@@ -2423,7 +2427,7 @@ footer .foot{
     text-align: left;
 }
 .contact-container .contact-form{
-    width: 80%;
+    width: 100%;
     max-width: 100%;
    
 }
@@ -2482,4 +2486,24 @@ footer .foot{
      font-size: var(--font-15);
      font-weight: 500;
 
+    }
+
+
+    /* <!-- ======================================================================
+    ==============================projectHTML start here========================
+    ====================================================================== --> */
+
+    #project .about-us{
+        margin: 0 auto;
+        max-width: 100%;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+       
+    }
+    #project .project-container{
+        margin-top: 5%;
     }
