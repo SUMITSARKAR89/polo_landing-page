@@ -120,6 +120,7 @@
     padding: 15px 30px;
     border-radius: 35px;
     max-width: 100%;
+   
     cursor: pointer;
     text-transform: capitalize;
 }
@@ -446,6 +447,7 @@
     width: 100%;
     position: relative;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
     padding: 20px 1%;
@@ -587,6 +589,9 @@
     transition: var(--transition-2);
     font-size: var(--font-16);
     font-weight: 600;
+    max-width: 100%;
+    width: 200px;
+    
 }
  .project-btn:hover,
  .contact-btn:hover{
@@ -599,6 +604,9 @@
     transition: var(--transition-2);
     font-size: var(--font-16);
     font-weight: 600;
+    max-width: 100%;
+    width: 200px;
+    
 }
 .hero-container .hero-card-right{
     display: flex;
@@ -1351,6 +1359,8 @@ main{
     gap: 10px;
     font-weight: 600;
     opacity: 0.8;
+    max-width: 100%;
+    margin: 0 auto;
  }
  .process-card-left h5 i{
     display: block;
@@ -1362,6 +1372,8 @@ main{
     margin-left: 10px;
     margin-top: 5px;
     color: var(---txt-white-grey);
+    max-width: 100%;
+    margin: 0 auto;
 
  }
  .process-slide-card .process-card-right{
@@ -1819,9 +1831,12 @@ main{
     max-width: 100%;
     margin-top: 5%;
 }
-.testimonial-container{
+#testimonial .testimonial-container{
     position: relative;
     z-index: 2;
+    max-width: 100%;
+    width: 100%;
+  
 }
 .testimonial-container .testimonial-left{
     position: absolute;
@@ -1830,6 +1845,7 @@ main{
     width: 50%;
     padding: 30px;
     max-width: 100%;
+    
    
     
 }
@@ -2388,7 +2404,7 @@ footer .foot{
 }
 .contact-container .contact-info{
     max-width: 100%;
-    width: ;
+   
 }
 .contact-container .recent-info{
    

@@ -25,7 +25,7 @@ projectCard.forEach(card => {
   });
 
 
-
+// ==================slider ======================
     const sliderTwo = document.querySelector('.slider-two');
 
  sliderTwo.addEventListener('wheel', (index) => {
@@ -35,7 +35,7 @@ projectCard.forEach(card => {
  });
 
 
-
+// ==============faq container========================
   const accFour = document.querySelectorAll('.acc-content');
 
 accFour.forEach( accs => {
