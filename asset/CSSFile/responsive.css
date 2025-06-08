@@ -83,6 +83,8 @@
 @media (max-width:1280px){
     .hero-content .hero-container{
         flex-direction: column;
+
+        transition: var(--transition-1);
         padding: 0 5%;
     }
     .hero .hero-content{
@@ -101,9 +103,15 @@
     .about-us .dot-txt{
         max-width: 35%;
     }
-    .about-container{
+    .about-container,
+     .service-container,
+    .faq-container,
+    .grow-container{
         flex-direction: column;
         transition: var(--transition-1);
+    }
+    .grow-container{
+         padding: 20px 30px;
     }
     .about-container .about-img-card{
         width: 100%;
@@ -122,18 +130,182 @@
         text-align: center;
         
     }
-    .service-container{
-        flex-direction: column;
-    }
     .service-logo-card .logo-body{
         flex-direction: column;
         border: none;
     }
-    #testimonial .testimonial-container{
-        
-        
+    .testimonial-container .testimonial-left{
+        position: relative;
+        width: 100%;
+        transition: var(--transition-1);
     }
+    .testimonial-container .choose-container .choose-card{
+        width: 100%;
+
+    }
+    .contact-container{
+        padding: 0;
+        flex-direction: column;
+    }
+    
      
     
+}
+@media (max-width:1024px){
+    section{
+          margin: 1% 3%; 
+
+    }
+    :root{
+        --font-16: 16px;
+     --font-15: 15px;
+     --font-20: 18px;
+     --font-22: 20px;
+     --font-24: 22px;
+     --font-28: 24px;
+     --font-h1: 55px;
+     --font-h2: 45px;
+     --font-h3: 24px;
+     --font-h4: 18px;
+     --font-h5: 16px;
+
+    }
+    .project{
+         height: 165vh;
+         width: 95%;
+         
+    }
+    .project-container{
+        grid-template-columns: 1fr;
+    }
+    main{
+    margin-top: 160%;
+    }
+    .recent-content,
+    .service-info{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .recent-product-container{
+        flex-direction: column;
+    }
+    #project .about-us{
+         width: 80%;
+    }
+}
+@media (max-width:768px){
+
+    .nav-inner .menu{
+         padding: 5px;
+    }
+     .menu .menuList{
+        gap: 5px;
+     }
+     .menu-item.navBtn{
+        padding: 5px 25px 5px 5px;
+     }
+     .menu-item a{
+        font-size: 13px;
+     }
+    .hero-card-one .hero-card,
+    .hero-card-two .hero-card{
+         width: 200px;
+        height: 140px;
+        transition: var(--transition-1);
+    }
+    .hero-container .hero-card-right{
+    
+        height: 20vh;
+    }
+    .project{
+        
+         width: 100%;
+         top: 60% ;
+         
+    }
+     main{
+        margin-top: 185%;
+    }
+    .about-content-card .about-card-bar{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .choose-container .choose-card,
+    #faq{
+          padding: 20px 25px;
+
+    }
+    .faq-container{
+        margin: 10px 20px;
+    }
+    .process-slide-card{
+        width: 95%;
+       
+    }
+    #project .about-us{
+         width: 90%;
+    }
+    
+
+}
+@media (max-width:600px){
+
+     :root{
+        --font-16: 12px;
+     --font-15: 12px;
+     --font-20: 16px;
+     --font-22: 18px;
+     --font-24: 20px;
+     --font-28: 21px;
+     --font-h1: 45px;
+     --font-h2: 35px;
+     --font-h3: 20px;
+     --font-h4: 16px;
+     --font-h5: 14px;
+
+    }
+    .process-slide-card{
+        width: 100%;
+       
+    }
+    .menuA{
+        display: none;
+    }
+    .hero .hero-content{
+        top: 10%;
+    }
+    .hero-card-left .hero-btns,
+    .recent-content .hero-btns,
+    .service-info .hero-btns{
+        flex-direction: column;
+    }
+     main{
+        margin-top: 225%;
+        
+    }
+    .about-container{
+        padding: 10px;
+    }
+    .about-us .dot-txt{
+        max-width: 40%;
+    }
+    .testimonial-left .recent-info .dot-txt{
+   
+        max-width: 60%;
+    
+    }
+    .footer-card .footer-link{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+    #contact,
+    #project{
+        margin-top: 30%;
+    }
+    #project .about-us{
+         width: 100%;
+    }
+
 }
 
